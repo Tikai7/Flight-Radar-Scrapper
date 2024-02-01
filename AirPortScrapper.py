@@ -2,6 +2,7 @@ import bs4
 import pandas as pd
 import numpy as np
 from urllib import request
+import time
 
 class AirPortScrapper():
     def __init__(self,url = "https://www.flightradar24.com/data/airports",headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}) -> None:
@@ -12,13 +13,14 @@ class AirPortScrapper():
         self.page = bs4.BeautifulSoup(request_text, "html.parser")
         
     def get_table(self):
-        return self.page.find("table", class_="tbl_datatable")
+        return self.page.find("table", id="tbl-datatable").find('tbody')
     
     def get_url_airport(self):
         url_list = []
         table = self.get_table()
         a_tags= table.find_all("a",{"data-country": True})
         url_list = np.unique([tag['href'] for tag in a_tags])
+        return url_list
     
     def find_airports(self):
         url_list = self.get_url_airport()
@@ -31,7 +33,7 @@ class AirPortScrapper():
             country = url.split("/")[-1].capitalize()
             airports[country] = self.get_airport(page_airports)
             urls_airports[country] = self.get_url(page_airports)
-            time.sleep(3)
+            time.sleep(5)
         return airports,urls_airports
     
     def get_airport(self,page):

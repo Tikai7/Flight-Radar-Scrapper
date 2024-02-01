@@ -12,7 +12,7 @@ class CountryScrapper():
         self.page = bs4.BeautifulSoup(request_text, "html.parser")
         
     def get_table(self):
-        return self.page.find("table", class_="tbl_datatable")
+        return self.page.find("table", id="tbl-datatable").find('tbody')
     
     def get_countries(self):
         table = self.get_table()
