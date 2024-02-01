@@ -1,10 +1,8 @@
 import bs4
 import pandas as pd
-import urllib
+import time
 import numpy as np
-
 from urllib import request
-import CountryScrapper
 
 class AirPortScrapper():
     def __init__(self,url,headers) -> None:
