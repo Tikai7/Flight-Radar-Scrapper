@@ -4,12 +4,22 @@ from Scrapper import Scrapper
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from metar import Metar
-
+import undetected_chromedriver as uc
+from datetime import datetime
 class ScraperWeather(Scrapper):
     def __init__(self):
         super().__init__()
         self.data = None
-        self.driver = webdriver.Chrome()
+        # options = webdriver.ChromeOptions()
+        # options.add_argument('ignore-certificate-errors')
+        # options.add_argument('--ignore-ssl-errors=yes')
+        # options.add_argument("--disable-blink-features=AutomationControlled")
+        # self.driver = webdriver.Chrome(options=options)
+        self.MAX_ERROR = 7
+        self.timeout = 10
+        options = uc.ChromeOptions() 
+        options.headless = False  # Set headless to False to run in non-headless mode
+        self.driver = uc.Chrome(use_subprocess=True, options=options) 
 
     @staticmethod
     def decode_metar(metar_data):
@@ -31,7 +41,8 @@ class ScraperWeather(Scrapper):
             }
             flattened_data.append(flattened_entry)
         df = pd.DataFrame(flattened_data)
-        df.to_csv("data/Weather.csv", index=False)
+        date = datetime.utcnow().strftime('%Y-%m-%d-%H-%M-%S')
+        df.to_csv(f"data/Airports_Weather_{date.strip()}.csv", index=False)
         return df
         
     def _get_weather_data(self):
@@ -52,7 +63,7 @@ class ScraperWeather(Scrapper):
 
         all_weather_data = []
         for airport,(country, url) in zip(airports_name, airports_url):
-            if countries_error[country] > len(airports_url_list[country])//3:
+            if countries_error[country] > min(self.MAX_ERROR, len(airports_url_list[country])//4):
                 continue
             state, data = self._get_airport_weather(url)
             if state:
@@ -62,12 +73,9 @@ class ScraperWeather(Scrapper):
                     "weather" : data
                 })
             else:
-                print(country, "has", countries_error[country], "/", len(airports_url_list[country])//3, "errors")
+                print(country, "has", countries_error[country], "/", min(self.MAX_ERROR, len(airports_url_list[country])//4), "errors")
                 countries_error[country] += 1
             time.sleep(self.timeout)
-            if len(all_weather_data) == 4:
-                break
-
         return self._convert_to_dataframe(all_weather_data)
 
     def _get_airport_weather(self, url):
@@ -85,6 +93,7 @@ class ScraperWeather(Scrapper):
             for tr in lines:
                 for i,td in enumerate(tr.find_elements(By.TAG_NAME, "td")):
                     weather_data[keys[i]].append(td.text)
+            print("Ok")
             return True,weather_data
         except:
             print("No weather data found")
@@ -93,3 +102,7 @@ class ScraperWeather(Scrapper):
     def scrappe(self):
         self.data = self._get_weather_data()
         return self.data
+    
+
+scrapper = ScraperWeather()
+scrapper.scrappe()
