@@ -2,6 +2,8 @@ import numpy as np
 import time
 import pandas as pd
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+
 class ArrivalScrapper():
     def __init__(self,file) -> None:
         self.file = file
