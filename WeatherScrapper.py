@@ -1,20 +1,15 @@
 import time
 import pandas as pd
 from Scrapper import Scrapper
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from metar import Metar
 import undetected_chromedriver as uc
 from datetime import datetime
-class ScraperWeather(Scrapper):
+
+class WeatherScrapper(Scrapper):
     def __init__(self):
         super().__init__()
         self.data = None
-        # options = webdriver.ChromeOptions()
-        # options.add_argument('ignore-certificate-errors')
-        # options.add_argument('--ignore-ssl-errors=yes')
-        # options.add_argument("--disable-blink-features=AutomationControlled")
-        # self.driver = webdriver.Chrome(options=options)
         self.MAX_ERROR = 7
         self.timeout = 10
         options = uc.ChromeOptions() 
@@ -104,5 +99,5 @@ class ScraperWeather(Scrapper):
         return self.data
     
 
-scrapper = ScraperWeather()
+scrapper = WeatherScrapper()
 scrapper.scrappe()

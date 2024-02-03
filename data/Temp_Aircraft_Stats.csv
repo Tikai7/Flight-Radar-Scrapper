@@ -1,0 +1,98 @@
+Aircraft,Number,Family,URL
+ATR42,312,ATR 42 family,https://www.flightradar24.com/data/aircraft/atr42
+AT43,118,ATR 42 family,https://www.flightradar24.com/data/aircraft/atr42/at43
+AT44,8,ATR 42 family,https://www.flightradar24.com/data/aircraft/atr42/at44
+AT45,120,ATR 42 family,https://www.flightradar24.com/data/aircraft/atr42/at45
+AT46,66,ATR 42 family,https://www.flightradar24.com/data/aircraft/atr42/at46
+ATR72,988,ATR 72 family,https://www.flightradar24.com/data/aircraft/atr72
+AT73,32,ATR 72 family,https://www.flightradar24.com/data/aircraft/atr72/at73
+AT75,351,ATR 72 family,https://www.flightradar24.com/data/aircraft/atr72/at75
+AT76,605,ATR 72 family,https://www.flightradar24.com/data/aircraft/atr72/at76
+BCSX,282,Airbus A220 family,https://www.flightradar24.com/data/aircraft/bcsx
+BCS1,53,Airbus A220 family,https://www.flightradar24.com/data/aircraft/bcsx/bcs1
+BCS3,229,Airbus A220 family,https://www.flightradar24.com/data/aircraft/bcsx/bcs3
+A300,235,Airbus A300 family,https://www.flightradar24.com/data/aircraft/a300
+A306,200,Airbus A300 family,https://www.flightradar24.com/data/aircraft/a300/a306
+A30B,30,Airbus A300 family,https://www.flightradar24.com/data/aircraft/a300/a30b
+A3ST,5,Airbus A300 family,https://www.flightradar24.com/data/aircraft/a300/a3st
+A310,84,Airbus A310 family,https://www.flightradar24.com/data/aircraft/a310
+A310,84,Airbus A310 family,https://www.flightradar24.com/data/aircraft/a310/a310
+A32S,7607,Airbus A320 family,https://www.flightradar24.com/data/aircraft/a32s
+A318,53,Airbus A320 family,https://www.flightradar24.com/data/aircraft/a32s/a318
+A319,1412,Airbus A320 family,https://www.flightradar24.com/data/aircraft/a32s/a319
+A320,4392,Airbus A320 family,https://www.flightradar24.com/data/aircraft/a32s/a320
+A321,1750,Airbus A320 family,https://www.flightradar24.com/data/aircraft/a32s/a321
+A32N,2722,Airbus A320neo family,https://www.flightradar24.com/data/aircraft/a32n
+A19N,14,Airbus A320neo family,https://www.flightradar24.com/data/aircraft/a32n/a19n
+A20N,1637,Airbus A320neo family,https://www.flightradar24.com/data/aircraft/a32n/a20n
+A21N,1071,Airbus A320neo family,https://www.flightradar24.com/data/aircraft/a32n/a21n
+A330,1522,Airbus A330 family,https://www.flightradar24.com/data/aircraft/a330
+A332,667,Airbus A330 family,https://www.flightradar24.com/data/aircraft/a330/a332
+A333,743,Airbus A330 family,https://www.flightradar24.com/data/aircraft/a330/a333
+A338,3,Airbus A330 family,https://www.flightradar24.com/data/aircraft/a330/a338
+A339,109,Airbus A330 family,https://www.flightradar24.com/data/aircraft/a330/a339
+A340,258,Airbus A340 family,https://www.flightradar24.com/data/aircraft/a340
+A342,13,Airbus A340 family,https://www.flightradar24.com/data/aircraft/a340/a342
+A343,148,Airbus A340 family,https://www.flightradar24.com/data/aircraft/a340/a343
+A345,18,Airbus A340 family,https://www.flightradar24.com/data/aircraft/a340/a345
+A346,79,Airbus A340 family,https://www.flightradar24.com/data/aircraft/a340/a346
+A350,519,Airbus A350 family,https://www.flightradar24.com/data/aircraft/a350
+A359,451,Airbus A350 family,https://www.flightradar24.com/data/aircraft/a350/a359
+A35K,68,Airbus A350 family,https://www.flightradar24.com/data/aircraft/a350/a35k
+A380,248,Airbus A380 family,https://www.flightradar24.com/data/aircraft/a380
+A388,248,Airbus A380 family,https://www.flightradar24.com/data/aircraft/a380/a388
+B737,1839,Boeing 737 Next Generation family,https://www.flightradar24.com/data/aircraft/b737
+B736,51,Boeing 737 Next Generation family,https://www.flightradar24.com/data/aircraft/b737/b736
+B737,1226,Boeing 737 Next Generation family,https://www.flightradar24.com/data/aircraft/b737/b737
+B739,562,Boeing 737 Next Generation family,https://www.flightradar24.com/data/aircraft/b737/b739
+B747,642,Boeing 747 family,https://www.flightradar24.com/data/aircraft/b747
+B741,2,Boeing 747 family,https://www.flightradar24.com/data/aircraft/b747/b741
+B742,35,Boeing 747 family,https://www.flightradar24.com/data/aircraft/b747/b742
+B743,6,Boeing 747 family,https://www.flightradar24.com/data/aircraft/b747/b743
+B744,449,Boeing 747 family,https://www.flightradar24.com/data/aircraft/b747/b744
+B748,150,Boeing 747 family,https://www.flightradar24.com/data/aircraft/b747/b748
+B757,761,Boeing 757 family,https://www.flightradar24.com/data/aircraft/b757
+B752,706,Boeing 757 family,https://www.flightradar24.com/data/aircraft/b757/b752
+B753,55,Boeing 757 family,https://www.flightradar24.com/data/aircraft/b757/b753
+B767,980,Boeing 767 family,https://www.flightradar24.com/data/aircraft/b767
+B762,186,Boeing 767 family,https://www.flightradar24.com/data/aircraft/b767/b762
+B763,756,Boeing 767 family,https://www.flightradar24.com/data/aircraft/b767/b763
+B764,38,Boeing 767 family,https://www.flightradar24.com/data/aircraft/b767/b764
+B777,1630,Boeing 777 family,https://www.flightradar24.com/data/aircraft/b777
+B772,452,Boeing 777 family,https://www.flightradar24.com/data/aircraft/b777/b772
+B773,57,Boeing 777 family,https://www.flightradar24.com/data/aircraft/b777/b773
+B779,0,Boeing 777 family,https://www.flightradar24.com/data/aircraft/b777/b779
+B77L,301,Boeing 777 family,https://www.flightradar24.com/data/aircraft/b777/b77l
+B77W,820,Boeing 777 family,https://www.flightradar24.com/data/aircraft/b777/b77w
+B787,1040,Boeing 787 family,https://www.flightradar24.com/data/aircraft/b787
+B788,382,Boeing 787 family,https://www.flightradar24.com/data/aircraft/b787/b788
+B789,581,Boeing 787 family,https://www.flightradar24.com/data/aircraft/b787/b789
+B78X,77,Boeing 787 family,https://www.flightradar24.com/data/aircraft/b787/b78x
+DHCX,1116,Bombardier Dash 8 family,https://www.flightradar24.com/data/aircraft/dhcx
+DH8A,201,Bombardier Dash 8 family,https://www.flightradar24.com/data/aircraft/dhcx/dh8a
+DH8B,90,Bombardier Dash 8 family,https://www.flightradar24.com/data/aircraft/dhcx/dh8b
+DH8C,238,Bombardier Dash 8 family,https://www.flightradar24.com/data/aircraft/dhcx/dh8c
+DH8D,587,Bombardier Dash 8 family,https://www.flightradar24.com/data/aircraft/dhcx/dh8d
+E17X,903,Embraer E170 family,https://www.flightradar24.com/data/aircraft/e17x
+E170,174,Embraer E170 family,https://www.flightradar24.com/data/aircraft/e17x/e170
+E75L,526,Embraer E170 family,https://www.flightradar24.com/data/aircraft/e17x/e75l
+E75S,203,Embraer E170 family,https://www.flightradar24.com/data/aircraft/e17x/e75s
+E19X,734,Embraer E190 family,https://www.flightradar24.com/data/aircraft/e19x
+E190,566,Embraer E190 family,https://www.flightradar24.com/data/aircraft/e19x/e190
+E195,168,Embraer E190 family,https://www.flightradar24.com/data/aircraft/e19x/e195
+E29X,102,Embraer E190-E2 family,https://www.flightradar24.com/data/aircraft/e29x
+E290,18,Embraer E190-E2 family,https://www.flightradar24.com/data/aircraft/e29x/e290
+E295,84,Embraer E190-E2 family,https://www.flightradar24.com/data/aircraft/e29x/e295
+ERJX,690,Embraer ERJ family,https://www.flightradar24.com/data/aircraft/erjx
+E135,187,Embraer ERJ family,https://www.flightradar24.com/data/aircraft/erjx/e135
+E140,0,Embraer ERJ family,https://www.flightradar24.com/data/aircraft/erjx/e140
+E145,503,Embraer ERJ family,https://www.flightradar24.com/data/aircraft/erjx/e145
+CRJX,1666,Mitsubishi CRJ family,https://www.flightradar24.com/data/aircraft/crjx
+CRJ1,68,Mitsubishi CRJ family,https://www.flightradar24.com/data/aircraft/crjx/crj1
+CRJ2,734,Mitsubishi CRJ family,https://www.flightradar24.com/data/aircraft/crjx/crj2
+CRJ7,331,Mitsubishi CRJ family,https://www.flightradar24.com/data/aircraft/crjx/crj7
+CRJ9,470,Mitsubishi CRJ family,https://www.flightradar24.com/data/aircraft/crjx/crj9
+CRJX,63,Mitsubishi CRJ family,https://www.flightradar24.com/data/aircraft/crjx/crjx
+SFSB,336,SAAB 340 / SAAB 2000 family,https://www.flightradar24.com/data/aircraft/sfsb
+SB20,47,SAAB 340 / SAAB 2000 family,https://www.flightradar24.com/data/aircraft/sfsb/sb20
+SF34,289,SAAB 340 / SAAB 2000 family,https://www.flightradar24.com/data/aircraft/sfsb/sf34
