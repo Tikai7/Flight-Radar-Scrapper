@@ -1,14 +1,23 @@
 import requests
 from bs4 import BeautifulSoup
-import AirPortScrapper
+from AirPortScrapper import AirPortScrapper
+from Scrapper import Scrapper
 
-class ScraperWeather:
-    def __init__(self, url):
-        self.url = url
+class ScraperWeather(Scrapper):
+    def __init__(self):
+        super().__init__()
         self.soup = None
         self.data = None
-        self.airport_scrapper = AirPortScrapper.AirPortScrapper(url)
+        self.airport_scrapper = AirPortScrapper(self.url, self.headers)
 
     def get_data(self):
         self.soup = BeautifulSoup(requests.get(self.url).text, 'html.parser')
-        airports,urls_airports = self.airport_scrapper.find_airports()
+        a,u = self.airport_scrapper.find_airports()
+        return a,u
+
+    def scrappe(self):
+        pass
+
+scrapper = ScraperWeather()
+a,u = scrapper.get_data()
+print(a)
