@@ -23,7 +23,27 @@ class WeatherScrapper(Scrapper):
         return Metar.Metar(metar_data).string()
 
     @staticmethod
-    def concat_df():        
+    def _flatten_weather_df():
+        new_weather_df = []
+        weather_data = pd.read_csv("data/Airports_Weather.csv").to_numpy()
+        for country, airport, metar, time in weather_data:
+            metar = eval(metar)
+            time = eval(time)
+            for m,t in zip(metar,time):
+                new_weather_df.append({
+                    "Country" : country,
+                    "Airport" : airport,
+                    "METARs" : m,
+                    "UTC/Time" : t
+                })
+ 
+        df = pd.DataFrame.from_dict(new_weather_df)
+        df.to_csv("data/Aircraft_Weather.csv",index=False)
+        return df
+
+
+    @staticmethod
+    def _concat_df():        
         all_files = os.listdir("temp")
         all_df = []
         for file in all_files:
@@ -137,18 +157,5 @@ class WeatherScrapper(Scrapper):
 # scrapper.scrappe()
 
 
-def join_files():
-    all_files = os.listdir("data")[3:-1]
-    all_df = []
-    for file in all_files:
-        all_df.append(pd.read_csv("data/"+file))
-
-    final_df = all_df[0]
-    all_df = all_df[1:]
-    for df in all_df:
-        print(df.shape)
-        final_df = pd.concat([final_df,df])
-        
-    final_df.to_csv(f"data/Airports_Weather.csv", index=False)
-
-join_files()
+df = WeatherScrapper._flatten_weather_df()
+print(df.head())
