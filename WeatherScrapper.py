@@ -22,6 +22,21 @@ class WeatherScrapper(Scrapper):
     def decode_metar(metar_data):
         return Metar.Metar(metar_data).string()
 
+    @staticmethod
+    def concat_df():        
+        all_files = os.listdir("temp")
+        all_df = []
+        for file in all_files:
+            all_df.append(pd.read_csv("data/"+file))
+
+        final_df = all_df[0]
+        all_df = all_df[1:]
+        for df in all_df:
+            print(df.shape)
+            final_df = pd.concat([final_df,df])
+        
+        final_df.to_csv(f"data/Airports_Weather.csv", index=False)
+
     def _convert_to_dataframe(self, data):
         """
             Convert the list of data into a dataframe
@@ -41,6 +56,7 @@ class WeatherScrapper(Scrapper):
         date = datetime.utcnow().strftime('%Y-%m-%d-%H-%M-%S')
         df.to_csv(f"data/Airports_Weather_{date.strip()}.csv", index=False)
         return df
+        
         
     def _get_weather_data(self):
         """
@@ -117,5 +133,22 @@ class WeatherScrapper(Scrapper):
         return self.data
     
 
-scrapper = WeatherScrapper()
-scrapper.scrappe()
+# scrapper = WeatherScrapper()
+# scrapper.scrappe()
+
+
+def join_files():
+    all_files = os.listdir("data")[3:-1]
+    all_df = []
+    for file in all_files:
+        all_df.append(pd.read_csv("data/"+file))
+
+    final_df = all_df[0]
+    all_df = all_df[1:]
+    for df in all_df:
+        print(df.shape)
+        final_df = pd.concat([final_df,df])
+        
+    final_df.to_csv(f"data/Airports_Weather.csv", index=False)
+
+join_files()
