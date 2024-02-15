@@ -1,3 +1,4 @@
+import numpy as np
 import time
 import pandas as pd
 from Scrapper import Scrapper
@@ -5,6 +6,7 @@ from selenium.webdriver.common.by import By
 from metar import Metar
 import undetected_chromedriver as uc
 from datetime import datetime
+import os
 
 class WeatherScrapper(Scrapper):
     def __init__(self):
@@ -56,10 +58,19 @@ class WeatherScrapper(Scrapper):
         airports_url = airports_url.to_numpy()
         airports_name = airports_name["Airport"].to_numpy()
 
-        all_weather_data = []
+        # Get the last scrapped file to check if the airport has already been scrapped
+        last_scrapped_file = os.listdir("data")[-2]
+        df_temp = pd.read_csv(f"data/{last_scrapped_file}", sep=",")
+        already_scrapped_country = list(set(df_temp["country"]))
+        already_scrapped_country.sort()
+
+        all_weather_data = []   
+        old_country = ""
+
         for airport,(country, url) in zip(airports_name, airports_url):
-            if countries_error[country] > min(self.MAX_ERROR, len(airports_url_list[country])//4):
+            if country in already_scrapped_country or np.searchsorted(already_scrapped_country,country) < len(already_scrapped_country) or countries_error[country] > min(self.MAX_ERROR, len(airports_url_list[country])//4):
                 continue
+
             state, data = self._get_airport_weather(url)
             if state:
                 all_weather_data.append({
@@ -70,7 +81,14 @@ class WeatherScrapper(Scrapper):
             else:
                 print(country, "has", countries_error[country], "/", min(self.MAX_ERROR, len(airports_url_list[country])//4), "errors")
                 countries_error[country] += 1
+            
+            if old_country != country:
+                self._convert_to_dataframe(all_weather_data)
+                old_country = country
+                
+                
             time.sleep(self.timeout)
+        
         return self._convert_to_dataframe(all_weather_data)
 
     def _get_airport_weather(self, url):
