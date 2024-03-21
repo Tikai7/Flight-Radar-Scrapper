@@ -24,7 +24,6 @@ class CountryScrapper():
         table = self.get_table()
         nb = table.find_all("span", class_="gray pull-right")
         airports_number = [''.join(char for char in span.text if char.isdigit()) for span in nb]
-        return airports_number
     
     def create_dataframe(self):
         countries = self.get_countries()
