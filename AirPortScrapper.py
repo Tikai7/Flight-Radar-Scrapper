@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from urllib import request
 import time
-
+import time
 class AirPortScrapper():
     def __init__(self,url = "https://www.flightradar24.com/data/airports",headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}) -> None:
         self.url = url
@@ -11,7 +11,7 @@ class AirPortScrapper():
         req = request.Request(url, headers=self.headers)
         request_text = request.urlopen(req).read()
         self.page = bs4.BeautifulSoup(request_text, "html.parser")
-        
+
     def get_table(self):
         return self.page.find("table", id="tbl-datatable").find('tbody')
     
