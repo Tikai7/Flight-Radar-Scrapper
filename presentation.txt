@@ -1,0 +1,17 @@
+
+Données :
+- On a des fichiers CSV sur les airports et les companies
+    - On a recolté les données de depart / arrivées / méteo / les reviews  
+
+- Axe d'analyse : 
+    - Companies : 
+        - Quel companies fait le moins de retard :
+            - Variance / écart type pour les retards entre chaque companies 
+        - Comparer companies low-cost vs traditionelles (perf retard / destination deservies)
+    - Aiports :
+        - Quel aeroport a le plus de traffic 
+        - Quel aeroport est le plus apprécié
+        - Les endroits les plus visités par aeroport
+    - Aicraft : 
+        - Type d'avion utilisé par rapport a la destination 
+        - Comparer les types d'avions pour chauqe companies

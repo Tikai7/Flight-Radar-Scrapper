@@ -41,7 +41,6 @@ class WeatherScrapper(Scrapper):
         df.to_csv("data/Aircraft_Weather.csv",index=False)
         return df
 
-
     @staticmethod
     def _concat_df():        
         all_files = os.listdir("temp")
@@ -54,7 +53,7 @@ class WeatherScrapper(Scrapper):
         for df in all_df:
             print(df.shape)
             final_df = pd.concat([final_df,df])
-        
+
         final_df.to_csv(f"data/Airports_Weather.csv", index=False)
 
     def _convert_to_dataframe(self, data):
@@ -150,12 +149,10 @@ class WeatherScrapper(Scrapper):
         
     def scrappe(self):
         self.data = self._get_weather_data()
+        WeatherScrapper._concat_df()
+        WeatherScrapper._flatten_weather_df()
         return self.data
     
 
 # scrapper = WeatherScrapper()
 # scrapper.scrappe()
-
-
-df = WeatherScrapper._flatten_weather_df()
-print(df.head())
