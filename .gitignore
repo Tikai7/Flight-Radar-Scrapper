@@ -2,4 +2,4 @@
 /data/flights.csv
 /data/flights_cleaned.csv
 /data/flights_cleaned.csv.gz
-/data/flights_cleaned_airlines.csv
+/analysis/data/flights_cleaned_airlines.csv
