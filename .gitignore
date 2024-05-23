@@ -3,3 +3,7 @@
 /data/flights_cleaned.csv
 /data/flights_cleaned.csv.gz
 /analysis/data/flights_cleaned_airlines.csv
+/temp/images
+/predictions/data
+/predictions/model
+
